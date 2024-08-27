@@ -1,0 +1,94 @@
+body{
+    font-family: "Roboto", sans-serif;
+}
+
+.navbar-collapse{
+    justify-content: flex-end;
+    font-family: "Dosis", sans-serif;
+}
+
+header{
+    font-size:1.5em;
+}
+
+.nav-link{
+    transition: background-color 0.3s ease;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover{
+    background-color: #0582ca;
+    color:white;
+}
+
+footer{
+    margin-top:60px;
+    width: 100%;
+    background-color:#0582ca ;
+    color: white;
+    padding: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer p{
+    margin-bottom:0;
+}
+
+.dropdown-menu {
+    max-height: 400px;
+    overflow-y: auto;  /* Enable vertical scrolling */
+    overflow-x: hidden; /* Disable horizontal scrolling */
+}
+
+.dropdown-header {
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color:#0582ca;
+}
+
+.dropdown-item:hover {
+    background-color: grey;
+}
+
+#home-section{
+    display:flex;
+    justify-content: center;
+    padding:60px;
+    background-color: #0582ca;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#home-heading{
+    color:white;
+}
+
+#home-button{
+    background-color:white;
+    color:black;
+    margin-left:10px;
+    transition: background-color 0.3s ease;
+}
+
+#home-button:hover{
+    background-color: grey;
+}
+
+
+
+@media (max-width: 461px){
+   #home-section{
+    flex-direction: column;
+    align-items: center;
+   }
+}
+
+@media (max-width: 329px){
+    #home-section{
+     flex-direction: column;
+     align-items: center;
+    }
+    #home-heading{
+        font-size: 1.5em;
+    }
+ }
