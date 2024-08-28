@@ -18,6 +18,9 @@
 
 ### Code
 
+- Tutorial on bootstrap navbar, cards and pagination provided by [W3Schools](https://www.w3schools.com/)
+- Documentation on jQuery toggle() function found on [jQuery.com](https://api.jquery.com/toggle/)
+
 ### Acknowledgements
 
 - Guidance and tutorial on basic CRUD Flask application provided by [Code Institute](https://codeinstitute.net/)

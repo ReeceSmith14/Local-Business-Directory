@@ -74,7 +74,44 @@ footer p{
     background-color: grey;
 }
 
+#cards-main{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
+.card{
+    width:300px;
+    margin-top:60px;
+    position: relative;
+}
+
+.contact-details{
+    display:none;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 10;
+    font-size:1.2em;
+}
+
+.close-button{
+border: none;
+display: block;
+margin: auto;
+transition: color 0.1s ease;
+}
+
+
+
+#pagination-section{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
 
 @media (max-width: 461px){
    #home-section{

@@ -5,3 +5,8 @@ from directory.models import User, Business, Category
 @app.route('/')
 def home():
     return render_template('home.html')
+
+
+@app.route('/add')
+def add():
+    return render_template('add.html')
