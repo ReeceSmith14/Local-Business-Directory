@@ -18,7 +18,7 @@ class User(db.Model):
 
 class Business(db.Model):
     id = db.Column(db.Integer, primary_key = True)
-    business_name = db.Column(db.String(25), unique = True, nullable = False)
+    business_name = db.Column(db.String(50), unique = True, nullable = False)
     business_description = db.Column(db.String(255), nullable = False)
     category_id = db.Column(db.Integer, db.ForeignKey("category.id", ondelete = "CASCADE"), nullable = False)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete = "CASCADE"), nullable = False)

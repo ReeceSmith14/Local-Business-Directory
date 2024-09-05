@@ -11,6 +11,8 @@
 - [Font Awesome](https://fontawesome.com/): Icon library
 - [CSS](https://en.wikipedia.org/wiki/CSS):Style sheet language
 - [AmpWhat](https://www.amp-what.com/#google_vignette): Lookup and reference for Unicode and HTML symbols, entities, and characters
+- [JavaScript](https://en.wikipedia.org/wiki/JavaScript): Client side website behavior
+- [jQuery](https://jquery.com/): JavaScript library.
 
 ## Credits
 
@@ -20,6 +22,7 @@
 
 - Tutorial on bootstrap navbar, cards, forms and  pagination provided by [W3Schools](https://www.w3schools.com/)
 - Documentation on jQuery toggle() function found on [jQuery.com](https://api.jquery.com/toggle/)
+- Guide on form validation, including built-in browser validation and custom validation found on [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 
 ### Acknowledgements
 
