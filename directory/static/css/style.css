@@ -105,11 +105,17 @@ margin: auto;
 transition: color 0.1s ease;
 }
 
-#pagination-section{
+.pagination{
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
+
+.pagination-arrow .page-link:hover{
+    background-color: #0582ca;
+    color:white;
+}
+
 #add-form-main{
     background-color: #003554;
     padding-top:20px;
@@ -147,8 +153,9 @@ transition: color 0.1s ease;
     align-self: center;
 }
 
-#category{
-    
+#add-form-submit:hover{
+    background-color:#0582ca;
+    color:white;
 }
 
 @media (max-width: 461px){

@@ -23,6 +23,7 @@
 - Tutorial on bootstrap navbar, cards, forms and  pagination provided by [W3Schools](https://www.w3schools.com/)
 - Documentation on jQuery toggle() function found on [jQuery.com](https://api.jquery.com/toggle/)
 - Guide on form validation, including built-in browser validation and custom validation found on [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
+- Guide for the jQuery find() method provided by [W3Schools](https://www.w3schools.com/jquery/traversing_find.asp)
 
 ### Acknowledgements
 
