@@ -10,3 +10,7 @@ def home():
 @app.route('/add')
 def add():
     return render_template('add.html')
+
+@app.route('/edit')
+def edit():
+    return render_template('edit.html')

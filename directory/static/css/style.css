@@ -116,13 +116,13 @@ transition: color 0.1s ease;
     color:white;
 }
 
-#add-form-main{
+#add-form-main, #edit-form-main{
     background-color: #003554;
     padding-top:20px;
     padding-bottom:20px;
 }
 
-#add-form-div{
+#add-form-div, #edit-form-div{
     display:flex;
     flex-direction: column;
     padding:10px;
@@ -135,7 +135,7 @@ transition: color 0.1s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#add-form-heading{
+#add-form-heading, #edit-form-heading{
     align-self: center;
     margin-bottom:10px;
 }
@@ -143,17 +143,17 @@ transition: color 0.1s ease;
 .form-group{
     margin-bottom: 15px;
 }
-#add-form{
+#add-form, #edit-form{
     display:flex;
     flex-direction: column;
 }
 
-#add-form-submit{
+#add-form-submit, #edit-form-submit{
     width:100px;
     align-self: center;
 }
 
-#add-form-submit:hover{
+#add-form-submit:hover, #edit-form-submit:hover{
     background-color:#0582ca;
     color:white;
 }
