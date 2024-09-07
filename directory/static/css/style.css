@@ -116,13 +116,13 @@ transition: color 0.1s ease;
     color:white;
 }
 
-#add-form-main, #edit-form-main{
+.form-main{
     background-color: #003554;
     padding-top:20px;
     padding-bottom:20px;
 }
 
-#add-form-div, #edit-form-div{
+.form-div{
     display:flex;
     flex-direction: column;
     padding:10px;
@@ -135,7 +135,7 @@ transition: color 0.1s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#add-form-heading, #edit-form-heading{
+.form-heading{
     align-self: center;
     margin-bottom:10px;
 }
@@ -143,17 +143,13 @@ transition: color 0.1s ease;
 .form-group{
     margin-bottom: 15px;
 }
-#add-form, #edit-form{
-    display:flex;
-    flex-direction: column;
-}
-
-#add-form-submit, #edit-form-submit{
+input.form-submit{
     width:100px;
-    align-self: center;
+    margin:auto;
+    display:block;
 }
 
-#add-form-submit:hover, #edit-form-submit:hover{
+.form-submit:hover{
     background-color:#0582ca;
     color:white;
 }
@@ -202,5 +198,11 @@ transition: color 0.1s ease;
     }
     #home-heading{
         font-size: 1.5em;
+    }
+ }
+
+ @media (min-width: 1720px){
+    body{
+        margin:auto;
     }
  }
