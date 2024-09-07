@@ -24,6 +24,7 @@
 - Documentation on jQuery toggle() function found on [jQuery.com](https://api.jquery.com/toggle/)
 - Guide on form validation, including built-in browser validation and custom validation found on [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 - Guide for the jQuery find() method provided by [W3Schools](https://www.w3schools.com/jquery/traversing_find.asp)
+- Guide on how to use .preventDefualt() by user [nnnnnn](https://stackoverflow.com/users/615754/nnnnnn) on [stackoverflow](https://stackoverflow.com/questions/22363838/submit-form-after-calling-e-preventdefault)
 
 ### Acknowledgements
 

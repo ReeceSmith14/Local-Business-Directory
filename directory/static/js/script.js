@@ -1,6 +1,7 @@
 $(document).ready(function(){
     cardToggle();
     formValidate();
+    signInValidation();
     pagination();
 });
 
@@ -22,6 +23,7 @@ function formValidate() {
         let email = $("#email").val();
         let website = $("#website").val();
         let image = $("#image").val();
+        
 
         // Remove any previous error messages and reset borders
         $(".error-message").remove(); // Remove all previous error messages
@@ -122,6 +124,50 @@ function formValidate() {
             event.preventDefault(); // Prevent form submission
         }
     });
+};
+
+function signInValidation(){
+    $(".form-submit").on("click", function(event){
+    let username = $("#username").val();
+    let password = $("#password").val();
+    
+    let isValid = true; 
+
+    // Validate username for sign in form
+
+    if (!username){
+        $("#username").css("border", "2px solid red");
+        $("#username").after("<span class='error-message' style='color: red;'>Field required</span>");
+        isValid = false;
+    } else if (username){
+        $("#username").css("border", "2px solid green");
+    }
+    
+    // Validate password for sign in form
+
+    if (!password){
+        $("#password").css("border", "2px solid red");
+        $("#password").after("<span class='error-message' style='color: red;'>Field required</span>");
+        isValid = false;
+    } else if (password){
+        $("#password").css("border", "2px solid green");
+    }
+
+    if (!isValid){
+        event.preventDefault(); 
+    }else if (isValid){
+        $(".error-message").remove();
+            // Show a success message
+            $("#form-feedback").remove(); // Remove any previous feedback message
+            $(".form").after("<p id='form-feedback' style='color: green;'>Sign in successful!</p>");
+
+           // Reset the form fields
+            $(".form")[0].reset();
+
+            // reset all input borders to default
+            $("#password, #username").css("border", "");
+    }
+});
 };
 
 function pagination(){
