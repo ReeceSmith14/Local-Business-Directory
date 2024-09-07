@@ -102,10 +102,10 @@ function formValidate() {
         if (isValid) {
             // Show a success message
             $("#form-feedback").remove(); // Remove any previous feedback message
-            $(".form-main").after("<p id='form-feedback' style='color: green;'>Form submitted successfully!</p>");
+            $(".form").after("<p id='form-feedback' style='color: green;'>Form submitted successfully!</p>");
 
            // Reset the form fields
-            $(".form-main")[0].reset();
+            $(".form")[0].reset();
 
             // reset all input borders to default
             $("#business_name, #business_description, #category, #phone, #email, #website, #image").css("border", "");
