@@ -12,7 +12,8 @@ function cardToggle(){
 
 function formValidate() {
     $(".form-submit").on("click", function(event) {
-        event.preventDefault(); // Prevent form submission
+        
+        $("#form-feedback").remove();
 
         let businessName = $("#business_name").val();
         let businessDescription = $("#business_description").val();
@@ -56,50 +57,57 @@ function formValidate() {
         }
 
         // Validate phone (must be exactly 11 characters if not empty)
-        if (phone && phone.length !== 11) {
+        if (!phone || !/^\d{11}$/.test(phone)) {
             $("#phone").css("border", "2px solid red");
-            $("#phone").after("<span class='error-message' style='color: red;'>Phone number must be exactly 11 characters</span>");
+            $("#phone").after("<span class='error-message' style='color: red;'>Phone number must be exactly 11 digits</span>");
             isValid = false;
         } else if (phone) {
             $("#phone").css("border", "2px solid green");
         }
 
         // Validate email (cannot exceed 255 characters)
-        if (email && email.length > 255) {
+        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email pattern
+        if (!email || email.length > 255 || !emailPattern.test(email)) {
             $("#email").css("border", "2px solid red");
-            $("#email").after("<span class='error-message' style='color: red;'>Email cannot exceed 255 characters</span>");
+            $("#email").after("<span class='error-message' style='color: red;'>Please enter a valid email address (must be less than 255 characters)</span>");
             isValid = false;
-        } else if (email) {
+        } else if (email){
             $("#email").css("border", "2px solid green");
         }
 
         // Validate website (cannot exceed 255 characters)
-        if (website && website.length > 255) {
+        let urlPattern = /^(https?:\/\/)?[^\s/$.?#].[^\s]*$/i; // Basic URL pattern
+        if (!website || (website.length > 255 || !urlPattern.test(website))) {
             $("#website").css("border", "2px solid red");
-            $("#website").after("<span class='error-message' style='color: red;'>Website cannot exceed 255 characters</span>");
+            $("#website").after("<span class='error-message' style='color: red;'>Please enter a valid URL (must be less than 255 characters)</span>");
             isValid = false;
         } else if (website) {
             $("#website").css("border", "2px solid green");
         }
 
         // Validate image (cannot exceed 255 characters)
-        if (image && image.length > 255) {
+        let imageUrlPattern = /^(https?:\/\/)?[^\s/$.?#].[^\s]*$/i; // Basic URL pattern for images
+        if (image && (image.length > 255 || !imageUrlPattern.test(image))) {
             $("#image").css("border", "2px solid red");
-            $("#image").after("<span class='error-message' style='color: red;'>Image URL cannot exceed 255 characters</span>");
+            $("#image").after("<span class='error-message' style='color: red;'>Please enter a valid image URL (must be less than 255 characters)</span>");
             isValid = false;
         } else if (image) {
             $("#image").css("border", "2px solid green");
         }
 
-        // Check that at least one of phone, email, or website is filled out
-        if (!phone && !email && !website) {
+         // Check that at least one of phone, email, or website is filled out
+         if (!phone && !email && !website) {
             $("#phone, #email, #website").css("border", "2px solid red");
-            $("#website").after("<span class='error-message' style='color: red;'>At least one of Number, Email, or Website must be filled out</span>");
+            $("#website").after("<span class='error-message' style='color: red;'>At least one of Number, Email, or Website must be filled out. </span>");
             isValid = false;
+        }else{
+            isValid = true;
         }
 
         // If all fields are valid, submit the form
         if (isValid) {
+
+            $(".error-message").remove();
             // Show a success message
             $("#form-feedback").remove(); // Remove any previous feedback message
             $(".form").after("<p id='form-feedback' style='color: green;'>Form submitted successfully!</p>");
@@ -110,6 +118,9 @@ function formValidate() {
             // reset all input borders to default
             $("#business_name, #business_description, #category, #phone, #email, #website, #image").css("border", "");
         };
+        if (!isValid){
+            event.preventDefault(); // Prevent form submission
+        }
     });
 };
 
