@@ -22,3 +22,7 @@ def profile():
 @app.route('/singIn')
 def signIn():
     return render_template('sign-in.html')
+
+@app.route('/register')
+def register():
+    return render_template('register.html')
