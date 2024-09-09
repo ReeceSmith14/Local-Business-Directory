@@ -108,9 +108,7 @@ if (!phone && !email && !website) {
         // If all fields are valid, submit the form
         if (isValid) {
             $(".error-message").remove();
-            // Show a success message
-            $("#form-feedback").remove(); // Remove any previous feedback message
-            $(".form").after("<p id='form-feedback' style='color: green;'>Form submitted successfully!</p>");
+            
 
             // Reset the form fields
             $(".form")[0].reset();
@@ -160,9 +158,7 @@ function signInValidation() {
 
         if (isValid) {
             $(".error-message").remove();
-            // Show a success message
-            $(".form-feedback").remove(); // Remove any previous feedback message
-            $(".form").after("<p id='form-feedback' style='color: green;'>Sign in successful</p>");
+        
 
             // Reset the form fields
             $(".form")[0].reset();
@@ -181,7 +177,7 @@ function signInValidation() {
 function registerValidation() {
     $("#register-form").on("submit", function(event) {
         $("#form-feedback").remove();
-    
+
         let firstName = $("#register-first-name").val();
         let lastName = $("#register-last-name").val();
         let email = $("#register-email").val();
@@ -241,10 +237,6 @@ function registerValidation() {
 
         if (isValid) {
             $(".error-message").remove(); // Remove any previous error messages
-
-            // Show a success message
-            $("#form-feedback").remove(); // Remove any previous feedback message
-            $(".form").after("<p id='form-feedback' style='color: green;'>Registration successful</p>");
 
             // Reset the form fields
             $("#register-form")[0].reset();

@@ -6,7 +6,7 @@ class User(db.Model):
     first_name = db.Column(db.String(25), nullable = False)
     last_name = db.Column(db.String(25), nullable = False)
     user_name = db.Column(db.String(25), unique = True, nullable = False)
-    email = db.Column(db.String(25), unique = True, nullable = False)
+    email = db.Column(db.String(255), unique = True, nullable = False)
     password = db.Column(db.String(25), nullable = False)
 
     businesses = db.relationship("Business", backref = "user", cascade = "all, delete", lazy = True)
