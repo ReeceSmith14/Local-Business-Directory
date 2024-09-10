@@ -194,6 +194,20 @@ input.form-submit{
     margin-bottom:0;
 }
 
+#add-button-anchor {
+    text-decoration-line: none;
+    color: white;
+}
+
+#sign-out-anchor {
+    text-decoration-line: none;
+    color: white;
+}
+
+#sign-out-button{
+    margin-top:10px;
+}
+
 @media (max-width: 461px){
    #home-section{
     flex-direction: column;

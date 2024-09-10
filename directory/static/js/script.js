@@ -61,7 +61,7 @@ function formValidate() {
         // Check that at least one of phone, email, or website is filled out and valid
 if (!phone && !email && !website) {
     $("#add-phone, #edit-phone, #add-email, #edit-email, #add-website, #edit-website").css("border", "2px solid red");
-    $("#add-website, #edit-website").after("<span class='error-message' style='color: red;'>At least one of Number, Email, or Website must be filled out.</span>");
+    $("#add-website, #edit-website").after("<span class='error-message' style='color: red;'>You need to provide at least one of the following: Number, Email, or Website must be filled out.</span>");
     isValid = false;
 } else {
     // Validate phone (must be exactly 11 digits if provided)
@@ -178,34 +178,14 @@ function registerValidation() {
     $("#register-form").on("submit", function(event) {
         $("#form-feedback").remove();
 
-        let firstName = $("#register-first-name").val();
-        let lastName = $("#register-last-name").val();
-        let email = $("#register-email").val();
         let username = $("#register-username").val();
         let password = $("#register-password").val();
 
         $(".error-message").remove(); // Remove all previous error messages
-        $("#register-first-name, #register-last-name, #register-email, #register-username, #register-password").css("border", "");
+        $("#register-username, #register-password").css("border", "");
 
         let isValid = true;
 
-        // Validate first name
-        if (!firstName) {
-            $("#register-first-name").css("border", "2px solid red");
-            $("#register-first-name").after("<span class='error-message' style='color: red;'>Field required</span>");
-            isValid = false;
-        } else {
-            $("#register-first-name").css("border", "2px solid green");
-        }
-
-        // Validate last name
-        if (!lastName) {
-            $("#register-last-name").css("border", "2px solid red");
-            $("#register-last-name").after("<span class='error-message' style='color: red;'>Field required</span>");
-            isValid = false;
-        } else {
-            $("#register-last-name").css("border", "2px solid green");
-        }
 
         // Validate username
         if (!username) {
@@ -223,16 +203,6 @@ function registerValidation() {
             isValid = false;
         } else {
             $("#register-password").css("border", "2px solid green");
-        }
-
-        // Validate email
-        let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!email || email.length > 255 || !emailPattern.test(email)) {
-            $("#register-email").css("border", "2px solid red");
-            $("#register-email").after("<span class='error-message' style='color: red;'>Please enter a valid email address (must be less than 255 characters)</span>");
-            isValid = false;
-        } else {
-            $("#register-email").css("border", "2px solid green");
         }
 
         if (isValid) {

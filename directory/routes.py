@@ -1,6 +1,8 @@
-from flask import render_template, request, url_for, redirect, flash
+from flask import render_template, request, url_for, redirect, session
 from directory import app, db
-from directory.models import User, Business, Category
+from directory.models import User, Business
+from werkzeug.security import generate_password_hash, check_password_hash
+
 
 @app.route('/')
 def home():
@@ -14,38 +16,62 @@ def add():
 def edit():
     return render_template('edit.html')
 
-@app.route('/profile')
+@app.route('/profile', methods=['GET', 'POST'])
 def profile():
+    if "username" in session:
+        return render_template('profile.html')
+    else:
+        return redirect(url_for('signIn'))
+    
+
     return render_template('profile.html')
 
-@app.route('/signIn')
+
+@app.route('/signIn', methods=['GET', 'POST'])
 def signIn():
+   
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+
+        user = User.query.filter_by(username=username).first()
+        if user and user.check_password(password):
+            session['username'] = username
+            return redirect(url_for('profile'))
+        else:
+            return render_template('sign-in.html', error='Invalid username or password')
+
+ 
+    
+    # Render the sign-in page for GET requests
     return render_template('sign-in.html')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
-    if request.method == "POST":
-        email = request.form.get("email")
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
 
-        # Check if the email is already in use
-        if User.query.filter_by(email=email).first():
-            flash('Registration failed, email already used', 'fail')
-            return redirect(url_for('register'))
-        
-        # Create a new user and add to the database
-        user = User(
-            first_name=request.form.get("first_name"),
-            last_name=request.form.get("last_name"),
-            user_name=request.form.get("user_name"),
-            email=email,
-            password=request.form.get("password"),  # Remember to hash passwords in production
-        )
+        user = User.query.filter_by(username=username).first()
 
-        db.session.add(user)
-        db.session.commit()
+        if user:
+            return render_template('register.html', error='User already exists')
+        else:
+            new_user = User(username=username)
+            new_user.set_password(password)
 
-        flash("Registration successful!", "success")
-        return redirect(url_for('signIn'))  # Redirect to the sign-in page after successful registration
+            db.session.add(new_user)
+            db.session.commit()
 
-    # Render the registration template for GET requests
+            session['username'] = username
+
+            return redirect(url_for('profile'))
+
+    # Render the registration form for GET requests
     return render_template('register.html')
+
+@app.route('/signOut')
+def signOut():
+    session.pop('username',None)
+    return redirect(url_for('signIn'))

@@ -25,7 +25,7 @@
 - Guide on form validation, including built-in browser validation and custom validation found on [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation)
 - Guide for the jQuery find() method provided by [W3Schools](https://www.w3schools.com/jquery/traversing_find.asp)
 - Guide on how to use .preventDefualt() by user [nnnnnn](https://stackoverflow.com/users/615754/nnnnnn) on [stackoverflow](https://stackoverflow.com/questions/22363838/submit-form-after-calling-e-preventdefault)
-- Guide on message flashing provided by [Message Flashing — Flask Documentation](https://flask.palletsprojects.com/en/latest/patterns/flashing/)
+- [Python authentication:](https://www.youtube.com/watch?v=Fr2MxT9M0V4) tutorial on how to create a secure login system with flask and SQL Alchemy by user[Cde with Josh](https://www.youtube.com/@codewithjoshoffical)
 
 ### Acknowledgements
 
