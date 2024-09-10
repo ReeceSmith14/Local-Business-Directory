@@ -1,8 +1,6 @@
 $(document).ready(function(){
     cardToggle();
     formValidate();
-    signInValidation();
-    registerValidation();
     pagination();
 });
 
@@ -115,104 +113,6 @@ if (!phone && !email && !website) {
 
             // Reset all input borders to default
             $("#add-business-name, #edit-business-name, #add-business-description, #edit-business-description, #add-category, #edit-category, #add-phone, #edit-phone, #add-email, #edit-email, #add-website, #edit-website, #add-image, #edit-image").css("border", "");
-        }
-
-        // Prevent form submission if invalid
-        if (!isValid) {
-            event.preventDefault(); // Prevent form submission
-        }
-    });
-}
-
-
-function signInValidation() {
-    $("#sign-in-submit").on("click", function(event) {
-
-        $("#form-feedback").remove();
-
-        let username = $("#sign-in-username").val();
-        let password = $("#sign-in-password").val();
-        
-        $(".error-message").remove(); // Remove all previous error messages
-        $("#sign-in-username, #sign-in-password").css("border", "");
-
-        let isValid = true; 
-        
-        // Validate username for sign-in form
-        if (!username) {
-            $("#sign-in-username").css("border", "2px solid red");
-            $("#sign-in-username").after("<span class='error-message' style='color: red;'>Username is required</span>");
-            isValid = false;
-        } else {
-            $("#sign-in-username").css("border", "2px solid green");
-        }
-        
-        // Validate password for sign-in form
-        if (!password) {
-            $("#sign-in-password").css("border", "2px solid red");
-            $("#sign-in-password").after("<span class='error-message' style='color: red;'>Password is required</span>");
-            isValid = false;
-        } else {
-            $("#sign-in-password").css("border", "2px solid green");
-        }
-
-        if (isValid) {
-            $(".error-message").remove();
-        
-
-            // Reset the form fields
-            $(".form")[0].reset();
-
-            // Reset all input borders to default
-            $("#sign-in-username, #sign-in-password").css("border", "");
-        }
-
-        // Prevent form submission if invalid
-        if (!isValid) {
-            event.preventDefault(); // Prevent form submission
-        }
-    });
-}
-
-function registerValidation() {
-    $("#register-form").on("submit", function(event) {
-        $("#form-feedback").remove();
-
-        let username = $("#register-username").val();
-        let password = $("#register-password").val();
-
-        $(".error-message").remove(); // Remove all previous error messages
-        $("#register-username, #register-password").css("border", "");
-
-        let isValid = true;
-
-
-        // Validate username
-        if (!username) {
-            $("#register-username").css("border", "2px solid red");
-            $("#register-username").after("<span class='error-message' style='color: red;'>Field required</span>");
-            isValid = false;
-        } else {
-            $("#register-username").css("border", "2px solid green");
-        }
-
-        // Validate password
-        if (!password) {
-            $("#register-password").css("border", "2px solid red");
-            $("#register-password").after("<span class='error-message' style='color: red;'>Field required</span>");
-            isValid = false;
-        } else {
-            $("#register-password").css("border", "2px solid green");
-        }
-
-        if (isValid) {
-            $(".error-message").remove(); // Remove any previous error messages
-
-            // Reset the form fields
-            $("#register-form")[0].reset();
-
-            // Reset all input borders to default
-            $("#register-first-name, #register-last-name, #register-email, #register-username, #register-password").css("border", "");
         }
 
         // Prevent form submission if invalid

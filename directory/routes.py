@@ -29,7 +29,8 @@ def profile():
 
 @app.route('/signIn', methods=['GET', 'POST'])
 def signIn():
-   
+    if 'username' in session:
+        return redirect(url_for('profile'))
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
