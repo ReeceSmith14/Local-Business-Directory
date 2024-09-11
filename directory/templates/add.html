@@ -4,20 +4,20 @@
 <main class="form-main">
     <div class="form-div">
         <h1 class="form-heading">Add A Business</h1>
-        <form action="#" class="form" id="add-form">
+        <form action="{{ url_for('add') }}" method ='POST' class="form" id="add-form">
             <div class="form-group">
                 <label for="add-business-name" class="form-label">Business Name</label>
-                <input class="form-control business-name" type="text" id="add-business-name" name="business-name" required>
+                <input class="form-control business-name" type="text" id="add-business-name" name="business_name" required>
             </div>
 
             <div class="form-group">
                 <label for="add-business-description" class="form-label">Description</label>
-                <textarea class="form-control business-description" id="add-business-description" name="business-description" required></textarea>
+                <textarea class="form-control business-description" id="add-business-description" name="business_description" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="add-category" class="form-label">Category</label>
-                <select class="form-select category" id="add-category" name="category" required>
+                <select class="form-select category" id="add-category" name="category_name" required>
                     <option value="">Please select a category</option>
                     <option class="select" value="Plumber">Plumber</option>
                     <option class="select" value="Painter">Painter</option>
@@ -29,12 +29,12 @@
 
             <div class="form-group">
                 <label for="add-phone" class="form-label">Number</label>
-                <input type="tel" class="form-control phone" id="add-phone" name="phone" pattern="[0-9]{11}" placeholder="Please only use numbers and remove spaces">
+                <input type="tel" class="form-control phone" id="add-phone" name="phone" pattern="[0-9]{11}" placeholder="Please only use numbers and remove spaces" required>
             </div>
 
             <div class="form-group">
                 <label for="add-email" class="form-label">Email</label>
-                <input type="email" class="form-control email" id="add-email" name="email">
+                <input type="email" class="form-control email" id="add-email" name="email" required>
             </div>
 
             <div class="form-group">
@@ -44,7 +44,7 @@
 
             <div class="form-group">
                 <label for="add-image" class="form-label">Image URL</label>
-                <input type="url" class="form-control image" id="add-image" name="image">
+                <input type="url" class="form-control image" id="add-image" name="image_url" required>
             </div>
 
             <input type="submit" value="Submit" class="form-submit">

@@ -3,13 +3,30 @@
 
 <main id="profile-main">
   <h1 id="profile-heading">Your Businesses</h1>
-  <button type="button" class="btn btn-primary btn-lg"><a id ="add-button-anchor" href = "{{ url_for('add') }}">Add Business <i class="fa-solid fa-circle-plus"></i></a></button>
-  <button id="sign-out-button" type="button" class="btn btn-primary btn-lg"><a id="sign-out-anchor" href = "{{ url_for('signOut') }}">Sign Out</a></button>
+
+  <!-- Add Business and Sign Out buttons -->
+  <button type="button" class="btn btn-primary btn-lg">
+    <a id="add-button-anchor" href="{{ url_for('add') }}">Add Business <i class="fa-solid fa-circle-plus"></i></a>
+  </button>
+  <button id="sign-out-button" type="button" class="btn btn-primary btn-lg">
+    <a id="sign-out-anchor" href="{{ url_for('signOut') }}">Sign Out</a>
+  </button>
+
+  <!-- List of businesses -->
   <ul id="profile-list" class="list-group">
-    <li class="list-group-item">First item
-    <span><a href="{{ url_for('edit') }}"><button type="button" class="btn btn-outline-primary">Edit</button></a></span>
-    <span><button type="button" class="btn btn-outline-danger">Delete</button></span>
-    </li>
+    <!-- Loop through businesses and display each one -->
+    {% for business in businesses %}
+      <li class="list-group-item">
+        {{ business.business_name }}
+        <!-- Edit button -->
+        <span><a href="{{ url_for('edit', business_id=business.id) }}"><button type="button" class="btn btn-outline-primary">Edit</button></a></span>
+        <!-- Delete button -->
+        <span><form action="#" method="POST" style="display:inline;">
+          <button type="submit" class="btn btn-outline-danger">Delete</button></form></span>
+      </li>
+    {% else %}
+      <li class="list-group-item">You have no businesses yet. Add one using the button above!</li>
+    {% endfor %}
   </ul>
 </main>
 
