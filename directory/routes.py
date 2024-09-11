@@ -39,9 +39,25 @@ def add():
     return render_template('add.html')
 
 
-@app.route('/edit')
-def edit():
-    return render_template('edit.html')
+@app.route('/edit/<int:business_id>', methods=['GET', 'POST'])
+def edit(business_id):
+    business = Business.query.get_or_404(business_id)
+
+    if request.method == 'POST':
+        business.business_name = request.form.get('business_name')
+        business.business_description = request.form.get('business_description')
+        business.category_name = request.form.get('category_name')
+        business.phone = request.form.get('phone')
+        business.email = request.form.get('email')
+        business.website = request.form.get('website')
+        business.image_url = request.form.get('image_url')
+
+        db.session.commit()
+
+        return redirect(url_for('profile'))
+
+
+    return render_template('edit.html', business=business)
 
 @app.route('/profile', methods=['GET', 'POST'])
 def profile():

@@ -4,20 +4,20 @@
 <main class="form-main">
     <div class="form-div">
         <h1 class="form-heading">Edit Business</h1>
-        <form action="#" class="form" id="edit-form">
+        <form action="{{ url_for('edit', business_id=business.id) }}" method='POST'class="form" id="edit-form">
             <div class="form-group">
                 <label for="edit-business-name" class="form-label">Business Name</label>
-                <input class="form-control business-name" type="text" id="edit-business-name" name="business_name" maxlength="50" required>
+                <input class="form-control business-name" type="text" value="{{ business.business_name }}" id="edit-business-name" name="business_name" maxlength="50" required>
             </div>
             
             <div class="form-group">
                 <label for="edit-business-description" class="form-label">Description</label>
-                <textarea class="form-control business-description" id="edit-business-description" name="business_description" maxlength="255" required></textarea>
+                <textarea class="form-control business-description" id="edit-business-description" name="business_description" maxlength="255" required>{{ business.business_description }}</textarea>
             </div>
 
             <div class="form-group">
                 <label for="edit-category" class="form-label">Category</label>
-                <select class="form-select category" id="edit-category" name="category_name" maxlength="25" required>
+                <select class="form-select category" id="edit-category" value="{{ business.category_name }}" name="category_name" maxlength="25" required>
                     <option value="">Please select a category</option>
                     <option value="Electrician">Electrician</option>
                     <option value="Plumber">Plumber</option>
@@ -62,22 +62,22 @@
 
             <div class="form-group">
                 <label for="edit-phone" class="form-label">Number</label>
-                <input type="tel" class="form-control phone" id="edit-phone" name="phone" pattern="[0-9]{11}" maxlength="11" placeholder="Please only use numbers and remove spaces" required>
+                <input type="tel" class="form-control phone" value="{{ business.phone }}" id="edit-phone" name="phone" pattern="[0-9]{11}" maxlength="11" placeholder="Please only use numbers and remove spaces" required>
             </div>
 
             <div class="form-group">
                 <label for="edit-email" class="form-label">Email</label>
-                <input type="email" class="form-control email" id="edit-email" name="email" maxlength="255" required>
+                <input type="email" class="form-control email" value="{{ business.email }}" id="edit-email" name="email" maxlength="255" required>
             </div>
 
             <div class="form-group">
                 <label for="edit-website" class="form-label">Website</label>
-                <input type="text" class="form-control website" id="edit-website" name="website" maxlength="255">
+                <input type="text" class="form-control website" value="{{ business.website}} " id="edit-website" name="website" maxlength="255">
             </div>
 
             <div class="form-group">
                 <label for="edit-image" class="form-label">Image URL</label>
-                <input type="url" class="form-control image" id="edit-image" name="image_url" required>
+                <input type="url" class="form-control image" value="{{ business.image_url }}" id="edit-image" name="image_url" required>
             </div>
 
             <input type="submit" value="Submit" class="form-submit">

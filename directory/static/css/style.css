@@ -33,23 +33,6 @@ footer p{
     margin-bottom:0;
 }
 
-.dropdown-menu {
-    max-height: 400px;
-    overflow-y: auto;  /* Enable vertical scrolling */
-    overflow-x: hidden; /* Disable horizontal scrolling */
-}
-
-.dropdown-header {
-    font-weight: bold;
-    margin-top: 10px;
-    margin-bottom: 5px;
-    color:#0582ca;
-}
-
-.dropdown-item:hover {
-    background-color: grey;
-}
-
 #home-section{
     display:flex;
     justify-content: center;
