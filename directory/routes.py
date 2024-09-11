@@ -4,9 +4,12 @@ from directory.models import User, Business
 from werkzeug.security import generate_password_hash, check_password_hash
 
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 def home():
-    return render_template('home.html')
+
+    businesses = Business.query.all()
+
+    return render_template('home.html', businesses=businesses)
     
 @app.route('/add', methods=['GET', 'POST'])
 def add():

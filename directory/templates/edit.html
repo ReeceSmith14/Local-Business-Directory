@@ -7,44 +7,77 @@
         <form action="#" class="form" id="edit-form">
             <div class="form-group">
                 <label for="edit-business-name" class="form-label">Business Name</label>
-                <input class="form-control business-name" type="text" id="edit-business-name" name="business-name" required>
+                <input class="form-control business-name" type="text" id="edit-business-name" name="business_name" maxlength="50" required>
             </div>
             
             <div class="form-group">
                 <label for="edit-business-description" class="form-label">Description</label>
-                <textarea class="form-control business-description" id="edit-business-description" name="business-description" required></textarea>
+                <textarea class="form-control business-description" id="edit-business-description" name="business_description" maxlength="255" required></textarea>
             </div>
 
             <div class="form-group">
                 <label for="edit-category" class="form-label">Category</label>
-                <select class="form-select category" id="edit-category" name="category" required>
+                <select class="form-select category" id="edit-category" name="category_name" maxlength="25" required>
                     <option value="">Please select a category</option>
-                    <option value="Plumber">Plumber</option>
-                    <option value="Painter">Painter</option>
                     <option value="Electrician">Electrician</option>
-                    <option value="Dog-Groomer">Dog-Groomer</option>
-                    <option value="Dog-Sitter">Dog-Sitter</option>
+                    <option value="Plumber">Plumber</option>
+                    <option value="HVAC Technician">HVAC Technician</option>
+                    <option value="Roofer">Roofer</option>
+                    <option value="Carpenter">Carpenter</option>
+                    <option value="Painter">Painter</option>
+                    <option value="Handyman Services">Handyman Services</option>
+                    <option value="Landscaper & Gardener">Landscaper & Gardener</option>
+
+                    <!-- Automotive -->
+                    <option value="Auto Repair">Auto Repair</option>
+                    <option value="Auto Detailing">Auto Detailing</option>
+                    <option value="Tire & Battery Services">Tire & Battery Services</option>
+
+                    <!-- Pet Services -->
+                    <option value="Dog Grooming">Dog Grooming</option>
+                    <option value="Dog Walking">Dog Walking</option>
+                    <option value="Pet Sitting">Pet Sitting</option>
+
+                    <!-- Personal Care -->
+                    <option value="Hair Stylist & Barber">Hair Stylist & Barber</option>
+                    <option value="Nail Technician">Nail Technician</option>
+                    <option value="Massage Therapist">Massage Therapist</option>
+
+                    <!-- Cleaning Services -->
+                    <option value="House Cleaning">House Cleaning</option>
+                    <option value="Carpet Cleaning">Carpet Cleaning</option>
+                    <option value="Window Cleaning">Window Cleaning</option>
+
+                    <!-- Childcare & Education -->
+                    <option value="Daycare Provider">Daycare Provider</option>
+                    <option value="Tutor">Tutor</option>
+                    <option value="Nanny & Babysitter">Nanny & Babysitter</option>
+
+                    <!-- Event Services -->
+                    <option value="Event Planner">Event Planner</option>
+                    <option value="Caterer">Caterer</option>
+                    <option value="Event Venue">Event Venue</option>
                 </select>
             </div>
 
             <div class="form-group">
                 <label for="edit-phone" class="form-label">Number</label>
-                <input type="tel" class="form-control phone" id="edit-phone" name="phone" pattern="[0-9]{11}" placeholder="Please only use numbers and remove spaces">
+                <input type="tel" class="form-control phone" id="edit-phone" name="phone" pattern="[0-9]{11}" maxlength="11" placeholder="Please only use numbers and remove spaces" required>
             </div>
 
             <div class="form-group">
                 <label for="edit-email" class="form-label">Email</label>
-                <input type="email" class="form-control email" id="edit-email" name="email">
+                <input type="email" class="form-control email" id="edit-email" name="email" maxlength="255" required>
             </div>
 
             <div class="form-group">
                 <label for="edit-website" class="form-label">Website</label>
-                <input type="text" class="form-control website" id="edit-website" name="website">
+                <input type="text" class="form-control website" id="edit-website" name="website" maxlength="255">
             </div>
 
             <div class="form-group">
                 <label for="edit-image" class="form-label">Image URL</label>
-                <input type="url" class="form-control image" id="edit-image" name="image">
+                <input type="url" class="form-control image" id="edit-image" name="image_url" required>
             </div>
 
             <input type="submit" value="Submit" class="form-submit">

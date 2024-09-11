@@ -18,11 +18,13 @@
     {% for business in businesses %}
       <li class="list-group-item">
         {{ business.business_name }}
+        <div>
         <!-- Edit button -->
         <span><a href="{{ url_for('edit', business_id=business.id) }}"><button type="button" class="btn btn-outline-primary">Edit</button></a></span>
         <!-- Delete button -->
         <span><form action="#" method="POST" style="display:inline;">
           <button type="submit" class="btn btn-outline-danger">Delete</button></form></span>
+          </div>
       </li>
     {% else %}
       <li class="list-group-item">You have no businesses yet. Add one using the button above!</li>

@@ -28,8 +28,8 @@ class Business(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id", ondelete = "CASCADE"), nullable = False)
     phone = db.Column(db.String(11), unique=True, nullable=False)
     email = db.Column(db.String(255), unique = True, nullable =False)
-    website = db.Column(db.String(255), unique = True, nullable = True)
-    image_url = db.Column(db.String(1000), nullable=False) 
+    website = db.Column(db.String(255), unique = False, nullable = True)
+    image_url = db.Column(db.String(), nullable=False) 
 
     def __repr__(self):
         return f"{self.id} - Business Name: {self.business_name}"
