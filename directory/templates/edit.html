@@ -79,7 +79,11 @@
                 <label for="edit-image" class="form-label">Image URL</label>
                 <input type="url" class="form-control image" value="{{ business.image_url }}" id="edit-image" name="image_url" required>
             </div>
-
+            
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+            
             <input type="submit" value="Submit" class="form-submit">
         </form>
     </div>

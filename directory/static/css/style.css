@@ -191,6 +191,19 @@ input.form-submit{
     margin-top:10px;
 }
 
+#user-delete-anchor {
+    text-decoration-line: none;
+    color: white;
+}
+
+#user-delete-button{
+    margin-top:10px;
+}
+.modal-footer{
+    display: flex;
+    justify-content: center;
+}
+
 @media (max-width: 461px){
    #home-section{
     flex-direction: column;

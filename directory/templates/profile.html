@@ -9,7 +9,10 @@
     <a id="add-button-anchor" href="{{ url_for('add') }}">Add Business <i class="fa-solid fa-circle-plus"></i></a>
   </button>
   <button id="sign-out-button" type="button" class="btn btn-primary btn-lg">
-    <a id="sign-out-anchor" href="{{ url_for('signOut') }}">Sign Out</a>
+    <a id="sign-out-anchor" href="{{ url_for('sign_out') }}">Sign Out</a>
+  </button>
+  <button id="user-delete-button" type="button" class="btn btn-danger btn-lg">
+    <a id="user-delete-anchor" href="#">Delete account</a>
   </button>
 
   <!-- List of businesses -->
@@ -22,8 +25,31 @@
         <!-- Edit button -->
         <span><a href="{{ url_for('edit', business_id=business.id) }}"><button type="button" class="btn btn-outline-primary">Edit</button></a></span>
         <!-- Delete button -->
-        <span><form action="#" method="POST" style="display:inline;">
-          <button type="submit" class="btn btn-outline-danger">Delete</button></form></span>
+        <span><button type="button" data-bs-toggle="modal" data-bs-target="#myModal-{{ business.id }}" class="btn btn-outline-danger">Delete</button></span>
+        
+        <!-- Modal -->
+        <div class="modal fade" id="myModal-{{ business.id }}">
+          <div class="modal-dialog">
+            <div class="modal-content">
+
+              <!-- Modal Header -->
+              <div class="modal-header">
+                <h4 class="modal-title">Are you sure you want to delete {{ business.business_name }}?</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+              </div>
+
+              <!-- Modal footer -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+                <!-- Delete confirmation -->
+                <a href="{{ url_for('delete_business', business_id=business.id) }}" class="btn btn-danger">Yes, Delete</a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- End Modal -->
+
           </div>
       </li>
     {% else %}
