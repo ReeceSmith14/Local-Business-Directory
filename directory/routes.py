@@ -120,7 +120,7 @@ def profile():
     # Get the user's businesses
     businesses = user.businesses  # Access the user's businesses via the relationship
     
-    return render_template('profile.html', businesses=businesses)
+    return render_template('profile.html', businesses=businesses, user=user)
 
 @app.route('/sign-in', methods=['GET', 'POST'])
 def sign_in():
@@ -180,3 +180,10 @@ def delete_business(business_id):
     db.session.delete(business)
     db.session.commit()
     return redirect(url_for('profile'))
+
+@app.route('/delete_user/<int:user_id>')
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect(url_for('sign_in'))
