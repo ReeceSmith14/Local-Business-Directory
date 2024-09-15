@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and responsive design -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awesome for using icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- Google Fonts for custom font styles (Dosis and Roboto) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap CSS for responsive design and prebuilt styles -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href = "{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- Link to the custom CSS file stored in the 'static' folder -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+
+    <!-- jQuery for additional JavaScript functionality -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- The title of the webpage displayed on the browser tab -->
     <title>Carway Connect</title>
 </head>
 <body>
+    <!-- Website Header Section -->
     <header>
+        <!-- Navbar for site navigation -->
         <nav class="navbar navbar-expand-sm">
             <div class="container-fluid">
+              <!-- Brand name that links to the homepage -->
               <a class="navbar-brand" href="{{ url_for('home') }}">Carway Connect</a>
+
+              <!-- Button to toggle the navbar on small screens -->
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
               </button>
+
+              <!-- Collapsible navigation links -->
               <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <ul class="navbar-nav">
+                  <!-- Directory link to the homepage -->
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('home') }}">Directory</a>
                   </li>
+
+                  <!-- Link to the Sign In page -->
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('sign_in') }}">Sign In</a>
                   </li>
+
+                  <!-- Link to the user profile page -->
                   <li class="nav-item">
                     <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                   </li>
@@ -37,13 +62,20 @@
           </nav>
     </header>
     
+    <!-- Placeholder for page-specific content -->
     {% block content %}
-
+    <!-- This is where individual pages' content will be injected -->
     {% endblock %}
+   
+   <!-- Footer section -->
    <footer>
-       <p>Created by Reece Smith &#169;</p>
+       <p>Created by Reece Smith &#169;</p> <!-- Credit to the creator -->
    </footer>
+
+   <!-- Bootstrap JavaScript bundle for enabling Bootstrap functionality (e.g., modals, dropdowns) -->
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+   <!-- Link to a custom JavaScript file in the 'static' folder -->
    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

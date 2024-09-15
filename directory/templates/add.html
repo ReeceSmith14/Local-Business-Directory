@@ -4,21 +4,28 @@
 <main class="form-main">
     <div class="form-div">
         <h1 class="form-heading">Add A Business</h1>
+        
+        <!-- Form to add a new business -->
         <form action="{{ url_for('add') }}" method="POST" class="form" id="add-form">
+            
+            <!-- Business Name Field -->
             <div class="form-group">
                 <label for="add-business-name" class="form-label">Business Name</label>
                 <input class="form-control business-name" type="text" id="add-business-name" name="business_name" maxlength="50" required>
             </div>
 
+            <!-- Business Description Field -->
             <div class="form-group">
                 <label for="add-business-description" class="form-label">Description</label>
                 <textarea class="form-control business-description" id="add-business-description" name="business_description" maxlength="255" required></textarea>
             </div>
 
+            <!-- Category Dropdown Selection -->
             <div class="form-group">
                 <label for="add-category" class="form-label">Category</label>
                 <select class="form-select category" id="add-category" name="category_name" maxlength="25" required>
                     <option value="">Please select a category</option>
+                    <!-- Service Categories -->
                     <option value="Electrician">Electrician</option>
                     <option value="Plumber">Plumber</option>
                     <option value="HVAC Technician">HVAC Technician</option>
@@ -60,29 +67,36 @@
                 </select>
             </div>
 
+            <!-- Phone Number Field (11-digit pattern) -->
             <div class="form-group">
                 <label for="add-phone" class="form-label">Number</label>
                 <input type="tel" class="form-control phone" id="add-phone" name="phone" pattern="[0-9]{11}" maxlength="11" placeholder="Please only use numbers and remove spaces" required>
             </div>
 
+            <!-- Email Field -->
             <div class="form-group">
                 <label for="add-email" class="form-label">Email</label>
                 <input type="email" class="form-control email" id="add-email" name="email" maxlength="255" required>
             </div>
 
+            <!-- Website Field (Optional) -->
             <div class="form-group">
                 <label for="add-website" class="form-label">Website</label>
                 <input type="text" class="form-control website" id="add-website" name="website" maxlength="255">
             </div>
 
+            <!-- Image URL Field -->
             <div class="form-group">
                 <label for="add-image" class="form-label">Image URL</label>
                 <input type="url" class="form-control image" id="add-image" name="image_url" required>
             </div>
+
+            <!-- Error message display in case of form validation errors -->
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
             {% endif %}
 
+            <!-- Submit button -->
             <input type="submit" value="Submit" class="form-submit">
         </form>
     </div>

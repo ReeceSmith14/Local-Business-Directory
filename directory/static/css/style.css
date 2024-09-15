@@ -1,229 +1,259 @@
+/* General font settings */
 body{
     font-family: "Roboto", sans-serif;
 }
 
+/* Navbar alignment and font settings */
 .navbar-collapse{
     justify-content: flex-end;
     font-family: "Dosis", sans-serif;
 }
 
+/* Header font size */
 header{
     font-size:1.5em;
 }
 
+/* Smooth transition for nav-link background color and text color on hover */
 .nav-link{
-    transition: background-color 0.3s ease;
-    transition: color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.2s ease;
 }
 
+/* Hover effect for navigation links */
 .nav-link:hover{
     background-color: #0582ca;
-    color:white;
+    color: white;
 }
 
+/* Footer styling */
 footer{
     width: 100%;
-    background-color:#0582ca ;
+    background-color: #0582ca;
     color: white;
     padding: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
 }
 
+/* Footer paragraph spacing */
 footer p{
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
+/* Home section layout and styling */
 #home-section{
-    display:flex;
+    display: flex;
     justify-content: center;
-    padding:60px;
+    padding: 60px;
     background-color: #0582ca;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
 }
 
+/* Home section heading color */
 #home-heading{
-    color:white;
+    color: white;
 }
 
+/* Home button styles and hover effect */
 #home-button{
-    background-color:white;
-    color:black;
-    margin-left:10px;
-    transition: background-color 0.3s ease;
+    background-color: white;
+    color: black;
+    margin-left: 10px;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
+/* Change button color on hover */
 #home-button:hover{
     background-color: grey;
 }
 
+/* Styling for no business message */
+#no-business-message{
+    margin-top: 50px;
+    font-size: 1.5rem;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* Card container layout with flexible wrapping */
 #cards-main{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
 }
 
+/* Individual card styling */
 .card{
-    width:300px;
-    margin-top:60px;
+    width: 300px;
+    margin-top: 60px;
     position: relative;
 }
 
+/* Hidden contact details inside cards */
 .contact-details{
-    display:none;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.9); /* Transparent white overlay */
     z-index: 10;
-    font-size:1.2em;
+    font-size: 1.2em;
 }
 
+/* Close button styling */
 .close-button{
-border: none;
-display: block;
-margin: auto;
-transition: color 0.1s ease;
+    border: none;
+    display: block;
+    margin: auto;
+    transition: color 0.1s ease;
 }
 
+/* Pagination styling and alignment */
 .pagination{
     display: flex;
     justify-content: center;
     margin-top: 40px;
 }
 
+/* Pagination link hover styles */
 .pagination-arrow .page-link:hover{
     background-color: #0582ca;
-    color:white;
+    color: white;
 }
 
+/* Form main container styling */
 .form-main{
     background-color: #003554;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
+/* Form container with margin and shadow */
 .form-div{
-    display:flex;
+    display: flex;
     flex-direction: column;
-    padding:10px;
-    margin-top:30px;
-    margin-bottom:30px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
     margin-left: 20%;
-    margin-right:20%;
-    color:black;
+    margin-right: 20%;
+    color: black;
     background-color: white;
     border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds shadow effect */
 }
 
+/* Form heading alignment */
 .form-heading{
     align-self: center;
-    margin-bottom:10px;
+    margin-bottom: 10px;
 }
 
+/* Form group margin spacing */
 .form-group{
     margin-bottom: 15px;
 }
+
+/* Form submit button styles and alignment */
 input.form-submit{
-    width:100px;
-    margin:auto;
-    display:block;
+    width: 100px;
+    margin: auto;
+    display: block;
 }
 
+/* Submit button hover effect */
 .form-submit:hover{
-    background-color:#0582ca;
-    color:white;
+    background-color: #0582ca;
+    color: white;
 }
 
+/* Profile main section styling */
 #profile-main{
-    display:flex;
+    display: flex;
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     background-color: #003554;
-    color:white;
+    color: white;
 }
 
+/* Profile heading margin */
 #profile-heading{
-    margin-top:30px;
+    margin-top: 30px;
 }
 
+/* Profile list margin */
 #profile-list{
-    margin-top:30px;
-    margin-bottom:30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
+/* List group item layout and spacing */
 #profile-list .list-group-item {
     display: flex;
     justify-content: space-between; /* Space between name and buttons */
     align-items: center; /* Vertically center the content */
-  }
-  
- 
- #profile-list .list-group-item span {
-    margin-left: 10px;
-  }
+}
 
+/* Margin for span inside list items */
+#profile-list .list-group-item span {
+    margin-left: 10px;
+}
+
+/* Sign-in div alignment */
 .sign-in-div{
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top:20px;
+    margin-top: 20px;
 }
 
+/* Sign-in div paragraph margin */
 .sign-in-div p{
-    margin-bottom:0;
+    margin-bottom: 0;
 }
 
-#add-button-anchor {
+/* Anchor tag styling for buttons */
+#add-button-anchor, #sign-out-anchor, #user-delete-anchor {
     text-decoration-line: none;
     color: white;
 }
 
-#sign-out-anchor {
-    text-decoration-line: none;
-    color: white;
+/* Sign-out button margin */
+#sign-out-button, #user-delete-button{
+    margin-top: 10px;
 }
 
-#sign-out-button{
-    margin-top:10px;
-}
-
-#user-delete-anchor {
-    text-decoration-line: none;
-    color: white;
-}
-
-#user-delete-button{
-    margin-top:10px;
-}
+/* Modal footer alignment */
 .modal-footer{
     display: flex;
     justify-content: center;
 }
 
+/* Responsive design: Adjust home section layout for smaller screens */
 @media (max-width: 461px){
    #home-section{
-    flex-direction: column;
-    align-items: center;
+       flex-direction: column;
+       align-items: center;
    }
 }
 
+/* Responsive design: Further adjustments for very small screens */
 @media (max-width: 329px){
     #home-section{
-     flex-direction: column;
-     align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
     #home-heading{
         font-size: 1.5em;
     }
- }
+}
 
- @media (min-width: 1440px){
+/* Wide screen adjustments: Set maximum body width and center content */
+@media (min-width: 1440px){
     body{
-        max-width:1440px;
-        margin:auto;
+        max-width: 1440px;
+        margin: auto;
     }
- }
+}

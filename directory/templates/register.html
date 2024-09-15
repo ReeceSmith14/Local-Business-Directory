@@ -1,28 +1,39 @@
 {% extends "base.html" %}
-{% block content %}
 
+{% block content %}
+<!-- Main container for the registration form -->
 <main class="form-main">
     <div class="form-div">
+        <!-- Heading for the registration page -->
         <h1 class="form-heading">Register</h1>
+        <!-- Form for user registration -->
         <form method="POST" action="{{ url_for('register') }}" class="form" id="register-form">
+            <!-- Username input field -->
             <div class="form-group">
                 <label for="register-username" class="form-label">Username</label>
+                <!-- Input field for username with a maximum length of 25 characters and required validation -->
                 <input class="form-control" type="text" id="register-username" name="username" maxlength="25" required>
             </div>
 
+            <!-- Password input field -->
             <div class="form-group">
                 <label for="register-password" class="form-label">Password</label>
+                <!-- Input field for password with a minimum length of 8 characters and required validation -->
                 <input class="form-control" type="password" id="register-password" name="password" minlength="8" required>
+                <!-- Instruction to the user about the password requirement -->
                 <small>Password must be at least 8 characters long.</small>
             </div>
 
+            <!-- Display error message if provided -->
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
             {% endif %}
 
+            <!-- Submit button for the form -->
             <input type="submit" value="Submit" class="form-submit" id="register-submit">
         </form>
 
+        <!-- Link for users who already have an account to sign in -->
         <div class="sign-in-div">
             <p>Already have an account?</p>
             <p><a href="{{ url_for('sign_in') }}">Sign in here</a></p>

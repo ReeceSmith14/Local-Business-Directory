@@ -1,33 +1,62 @@
 {% extends "base.html" %}
+
 {% block content %}
 
+<!-- Home section containing a heading -->
 <section id="home-section">
-    <h1 id="home-heading">I'm Looking For A Buisness</h1>
+    <h1 id="home-heading">I'm Looking For A Business</h1>
 </section>
+
+<!-- Main section that contains a list of business cards -->
 <main id="cards-main">
-  {% for business in businesses %}
-   <div class="card"> 
-    <img class="card-img-top" src="{{ business.image_url }}" alt="Card image">
-    <div class="card-body">
-      <h4 class="card-title">{{ business.business_name }}</h4>
-      <p class="card-text">{{ business.business_description }}
-      </p>
-      <div class="contact-details">
-        <p>Number: {{ business.phone }}</p>
-        <p>Email: {{ business.email }}</p>
-        <p>Website: {{ business.website }}</p>
-        <button class="btn btn-primary toggle-button close-button"><i class="fa-solid fa-xmark"></i></button>
+  <!-- Check if there are any businesses to display -->
+  {% if businesses %}
+    <!-- Loop through each business and create a card for it -->
+    {% for business in businesses %}
+      <div class="card"> 
+        <!-- Business image displayed at the top of the card -->
+        <img class="card-img-top" src="{{ business.image_url }}" alt="Card image">
+        <div class="card-body">
+          <!-- Business name as the card title -->
+          <h4 class="card-title">{{ business.business_name }}</h4>
+          <!-- Brief description of the business -->
+          <p class="card-text">{{ business.business_description }}</p>
+
+          <!-- Contact details (initially hidden, toggled with the button) -->
+          <div class="contact-details">
+            <p>Number: {{ business.phone }}</p>
+            <p>Email: {{ business.email }}</p>
+            <p>Website: {{ business.website }}</p>
+            <!-- Button to close contact details -->
+            <button class="btn btn-primary toggle-button close-button">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+
+          <!-- Button to toggle visibility of contact details -->
+          <button class="btn btn-primary toggle-button">Contact Details</button>
+        </div>
       </div>
-      <button class="btn btn-primary toggle-button">Contact Details</button>
-    </div>
-  </div>
-  {% endfor %}
+    {% endfor %}
+  <!-- If no businesses are available, display this message -->
+  {% else %}
+    <p id="no-business-message">There are currently no businesses. Please register and add a business.</p>
+  {% endif %}
 </main>
+
+<!-- Pagination section (not yet dynamic, currently hardcoded) -->
 <section>
   <ul class="pagination">
-    <li class="page-item pagination-arrow"><p class="page-link"><i class="fa-solid fa-chevron-left"></i></p></li>
+    <!-- Previous page button (disabled/placeholder) -->
+    <li class="page-item pagination-arrow">
+      <p class="page-link"><i class="fa-solid fa-chevron-left"></i></p>
+    </li>
+    <!-- Page number (currently only 1) -->
     <li class="page-item"><p class="page-link">1</p></li>
-    <li class="page-item pagination-arrow"><p class="page-link"><i class="fa-solid fa-chevron-right"></i></p></li>
+    <!-- Next page button (disabled/placeholder) -->
+    <li class="page-item pagination-arrow">
+      <p class="page-link"><i class="fa-solid fa-chevron-right"></i></p>
+    </li>
   </ul>
 </section>
 

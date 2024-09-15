@@ -1,24 +1,34 @@
 {% extends "base.html" %}
+
 {% block content %}
 
+<!-- Main section containing the edit business form -->
 <main class="form-main">
     <div class="form-div">
         <h1 class="form-heading">Edit Business</h1>
-        <form action="{{ url_for('edit', business_id=business.id) }}" method='POST'class="form" id="edit-form">
+        
+        <!-- Form to edit business details, submitting to the 'edit' route with the business ID -->
+        <form action="{{ url_for('edit', business_id=business.id) }}" method='POST' class="form" id="edit-form">
+            
+            <!-- Business name input field -->
             <div class="form-group">
                 <label for="edit-business-name" class="form-label">Business Name</label>
                 <input class="form-control business-name" type="text" value="{{ business.business_name }}" id="edit-business-name" name="business_name" maxlength="50" required>
             </div>
             
+            <!-- Business description input field -->
             <div class="form-group">
                 <label for="edit-business-description" class="form-label">Description</label>
                 <textarea class="form-control business-description" id="edit-business-description" name="business_description" maxlength="255" required>{{ business.business_description }}</textarea>
             </div>
 
+            <!-- Business category selection dropdown -->
             <div class="form-group">
                 <label for="edit-category" class="form-label">Category</label>
                 <select class="form-select category" id="edit-category" value="{{ business.category_name }}" name="category_name" maxlength="25" required>
+                    <!-- Default option -->
                     <option value="">Please select a category</option>
+                    <!-- Different business categories grouped for better structure -->
                     <option value="Electrician">Electrician</option>
                     <option value="Plumber">Plumber</option>
                     <option value="HVAC Technician">HVAC Technician</option>
@@ -28,62 +38,68 @@
                     <option value="Handyman Services">Handyman Services</option>
                     <option value="Landscaper & Gardener">Landscaper & Gardener</option>
 
-                    <!-- Automotive -->
+                    <!-- Automotive services -->
                     <option value="Auto Repair">Auto Repair</option>
                     <option value="Auto Detailing">Auto Detailing</option>
                     <option value="Tire & Battery Services">Tire & Battery Services</option>
 
-                    <!-- Pet Services -->
+                    <!-- Pet services -->
                     <option value="Dog Grooming">Dog Grooming</option>
                     <option value="Dog Walking">Dog Walking</option>
                     <option value="Pet Sitting">Pet Sitting</option>
 
-                    <!-- Personal Care -->
+                    <!-- Personal care services -->
                     <option value="Hair Stylist & Barber">Hair Stylist & Barber</option>
                     <option value="Nail Technician">Nail Technician</option>
                     <option value="Massage Therapist">Massage Therapist</option>
 
-                    <!-- Cleaning Services -->
+                    <!-- Cleaning services -->
                     <option value="House Cleaning">House Cleaning</option>
                     <option value="Carpet Cleaning">Carpet Cleaning</option>
                     <option value="Window Cleaning">Window Cleaning</option>
 
-                    <!-- Childcare & Education -->
+                    <!-- Childcare and education -->
                     <option value="Daycare Provider">Daycare Provider</option>
                     <option value="Tutor">Tutor</option>
                     <option value="Nanny & Babysitter">Nanny & Babysitter</option>
 
-                    <!-- Event Services -->
+                    <!-- Event services -->
                     <option value="Event Planner">Event Planner</option>
                     <option value="Caterer">Caterer</option>
                     <option value="Event Venue">Event Venue</option>
                 </select>
             </div>
 
+            <!-- Phone number input field (pattern to enforce correct phone format) -->
             <div class="form-group">
                 <label for="edit-phone" class="form-label">Number</label>
                 <input type="tel" class="form-control phone" value="{{ business.phone }}" id="edit-phone" name="phone" pattern="[0-9]{11}" maxlength="11" placeholder="Please only use numbers and remove spaces" required>
             </div>
 
+            <!-- Email input field -->
             <div class="form-group">
                 <label for="edit-email" class="form-label">Email</label>
                 <input type="email" class="form-control email" value="{{ business.email }}" id="edit-email" name="email" maxlength="255" required>
             </div>
 
+            <!-- Website input field (optional) -->
             <div class="form-group">
                 <label for="edit-website" class="form-label">Website</label>
-                <input type="text" class="form-control website" value="{{ business.website}} " id="edit-website" name="website" maxlength="255">
+                <input type="text" class="form-control website" value="{{ business.website }}" id="edit-website" name="website" maxlength="255">
             </div>
 
+            <!-- Image URL input field -->
             <div class="form-group">
                 <label for="edit-image" class="form-label">Image URL</label>
                 <input type="url" class="form-control image" value="{{ business.image_url }}" id="edit-image" name="image_url" required>
             </div>
             
+            <!-- Display an error message if one exists -->
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
             {% endif %}
             
+            <!-- Submit button to submit the form -->
             <input type="submit" value="Submit" class="form-submit">
         </form>
     </div>

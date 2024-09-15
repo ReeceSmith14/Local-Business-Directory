@@ -1,23 +1,31 @@
 {% extends "base.html" %}
-{% block content %}
 
+{% block content %}
+<!-- Main container for the sign-in form -->
 <main class="form-main">
     <div class="form-div">
+        <!-- Heading for the sign-in page -->
         <h1 class="form-heading">Sign In</h1>
-        <form action="{{ url_for('sign_in') }}" method = 'POST' class="form" id="sign-in-form">
+        <!-- Form for user sign-in -->
+        <form action="{{ url_for('sign_in') }}" method="POST" class="form" id="sign-in-form">
+            <!-- Username input field -->
             <div class="form-group">
                 <label for="sign-in-username" class="form-label">Username</label>
                 <input class="form-control" type="text" id="sign-in-username" name="username">
             </div>
+            <!-- Password input field -->
             <div class="form-group">
                 <label for="sign-in-password" class="form-label">Password</label>
                 <input class="form-control" type="password" id="sign-in-password" name="password">
             </div>
+            <!-- Display error message if provided -->
             {% if error %}
                 <p style="color: red;">{{ error }}</p>
             {% endif %}
+            <!-- Submit button for the form -->
             <input type="submit" value="Submit" class="form-submit" id="sign-in-submit">
         </form>
+        <!-- Link for users who don't have an account to register -->
         <div class="sign-in-div">
             <p>Don't have an account?</p>
             <p><a href="{{ url_for('register') }}">Register here</a></p>

@@ -17,4 +17,3 @@ else:
 
 db = SQLAlchemy(app)
 
-from directory import routes

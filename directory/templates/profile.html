@@ -1,35 +1,41 @@
 {% extends "base.html" %}
+
 {% block content %}
 
+<!-- Main section for the profile page displaying user's businesses -->
 <main id="profile-main">
   <h1 id="profile-heading">Your Businesses</h1>
 
-  <!-- Add Business and Sign Out buttons -->
+  <!-- Add Business and Sign Out buttons for user actions -->
   <button type="button" class="btn btn-primary btn-lg">
+    <!-- Link to add a new business -->
     <a id="add-button-anchor" href="{{ url_for('add') }}">Add Business <i class="fa-solid fa-circle-plus"></i></a>
   </button>
+
   <button id="sign-out-button" type="button" class="btn btn-primary btn-lg">
+    <!-- Link to sign out -->
     <a id="sign-out-anchor" href="{{ url_for('sign_out') }}">Sign Out</a>
   </button>
 
-  <!-- Delete account button -->
+  <!-- Button to trigger modal for account deletion -->
   <button id="user-delete-button" type="button" data-bs-toggle="modal" data-bs-target="#user-delete-modal" class="btn btn-danger btn-lg">
     Delete Account
   </button>
 
-  <!-- Delete Account Modal -->
+  <!-- Modal for confirming account deletion -->
   <div class="modal fade" id="user-delete-modal">
     <div class="modal-dialog">
       <div class="modal-content">
       
-        <!-- Modal Header -->
+        <!-- Modal Header with a warning message -->
         <div class="modal-header">
           <h4 class="modal-title" style="color:black;">Are you sure you want to delete your account?</h4>
         </div>
         
-        <!-- Modal Footer -->
+        <!-- Modal Footer with options to cancel or confirm deletion -->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
+          <!-- If user confirms, delete the account -->
           <a href="{{ url_for('delete_user', user_id=user.id) }}" class="btn btn-danger">Yes, Delete</a>
         </div>
         
@@ -37,44 +43,47 @@
     </div>
   </div>
 
-  <!-- List of businesses -->
+  <!-- List of user's businesses -->
   <ul id="profile-list" class="list-group">
-    <!-- Loop through businesses and display each one -->
+    <!-- Loop through each business and display its details -->
     {% for business in businesses %}
       <li class="list-group-item">
+        <!-- Display the business name -->
         {{ business.business_name }}
         <div>
-          <!-- Edit button -->
+          <!-- Edit button for each business -->
           <span><a href="{{ url_for('edit', business_id=business.id) }}"><button type="button" class="btn btn-outline-primary">Edit</button></a></span>
-          <!-- Delete button -->
+
+          <!-- Delete button triggers modal for confirmation -->
           <span><button type="button" data-bs-toggle="modal" data-bs-target="#myModal-{{ business.id }}" class="btn btn-outline-danger">Delete</button></span>
           
-          <!-- Business Delete Modal -->
+          <!-- Modal for confirming business deletion -->
           <div class="modal fade" id="myModal-{{ business.id }}">
             <div class="modal-dialog">
               <div class="modal-content">
 
-                <!-- Modal Header -->
+                <!-- Modal Header with confirmation question -->
                 <div class="modal-header">
                   <h4 class="modal-title">Are you sure you want to delete {{ business.business_name }}?</h4>
                   <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
 
-                <!-- Modal footer -->
+                <!-- Modal footer with options to cancel or confirm business deletion -->
                 <div class="modal-footer">
                   <button type="button" class="btn btn-primary" data-bs-dismiss="modal">No</button>
-                  <!-- Delete confirmation -->
+                  <!-- If user confirms, delete the business -->
                   <a href="{{ url_for('delete_business', business_id=business.id) }}" class="btn btn-danger">Yes, Delete</a>
                 </div>
 
               </div>
             </div>
           </div>
-          <!-- End Modal -->
+          <!-- End of Business Delete Modal -->
 
         </div>
       </li>
     {% else %}
+      <!-- Message displayed if no businesses are available -->
       <li class="list-group-item">You have no businesses yet. Add one using the button above!</li>
     {% endfor %}
   </ul>
