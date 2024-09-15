@@ -16,4 +16,9 @@ else:
     app.config["SQLALCHEMY_DATABASE_URI"] = uri
 
 db = SQLAlchemy(app)
+"""
+Importing routes at the bottom ensures that the Flask app (app) is fully initialised 
+before routes are defined, preventing issues with circular dependencies.
 
+"""
+from directory import routes
