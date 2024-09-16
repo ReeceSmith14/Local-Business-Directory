@@ -497,7 +497,7 @@ This project was developed using Gitpod and deployed to Heroku. Follow these ste
    - Connect to GitHub:
      - Go to the "Deploy" tab of your app on the Heroku dashboard.
      - Under "Deployment method", select "GitHub".
-     - Click "Connect to GitHub" and authorize Heroku to access your GitHub account.
+     - Click "Connect to GitHub" and authorise Heroku to access your GitHub account.
      - Search for your repository and click "Connect".
 
    - Automatic Deploys (Optional):
