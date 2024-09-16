@@ -461,95 +461,111 @@ The website features an intuitive and responsive design. Navigation is straightf
 
 HTML was validated using [Markup Validation Service](https://validator.w3.org)
 
-![Valid HTML](https://github.com/ReeceSmith14/BlackJack-Game/assets/61851890/9d46c5c9-3433-481a-8ada-fcf1cf22c151)
+![HTML validation](directory/static/images/Validation/HTML.png)
 
 #### CSS
 
 CSS was validated using [The W3C CSS Validation Services](https://jigsaw.w3.org/css-validator/)
 
-![Valid CSS](https://github.com/ReeceSmith14/BlackJack-Game/assets/61851890/b4d80dea-c9da-4c82-b8b2-b0ebd8189c74)
+![CSS Validation](directory/static/images/Validation/CSS.png)
 
 #### JavaScript
 
 JavaScript was validated using [JSHint](https://jshint.com)
 
-![Valid JS](https://github.com/ReeceSmith14/BlackJack-Game/assets/61851890/d29c2216-bc9a-4d8f-961b-89e483e59746)
+![JS validation](directory/static/images/Validation/JS.png)
 
 ## Deployment
 
-This project was developed  using a mixture of IDEs, committed to git initially using the PCs built-in terminal and then eventually [GitHub Desktop](https://desktop.github.com/).
+This project was developed using Gitpod and deployed to Heroku. Follow these steps to deploy your application and run it locally:
 
-The IDEs used were:
+### Deploying to Heroku via the Website
 
-- [Atom](https://atom-editor.cc/) Used primarily to edit the README.md becuase of it built-in markdown preview
-- [Sublime Text](https://www.sublimetext.com/index2) Used to edit HTML, CSS and JS.
+1. Sign Up for Heroku:
+   - If you don’t have a Heroku account, sign up at [Heroku's website](https://www.heroku.com/).
 
-### Deploying from GitHub
+2. Create a New Heroku App:
+   - Log in to your Heroku account and navigate to the [Heroku Dashboard](https://dashboard.heroku.com/).
+   - Click the "New" button and select "Create new app".
 
-1. Log into GitHub account.
-2. Go to your repositories and select BlackJack-Game.
-3. At the top of the screen you'll find "Settings" in the same navigation bar as "Code", "Issues" etc.
-4. Open "Pages".
-5. Under "Build and deployment", change source to "Deploy from a branch".
-6. Under branch select "Main" / whichever branch is the most up to date and working, select the "root" folder and click the save button.
-7. Refresh the page and eventually at the top a URL will be generate.
-8. Click "Visit site" to view website.
+3. Configure Your App:
+   - App Name: Enter a unique name for your app.
+   - Region: Select the region closest to your users.
+   - Click "Create app" to proceed.
 
-### Running The Project Locally
+4. Deploy Your App:
+   - Connect to GitHub:
+     - Go to the "Deploy" tab of your app on the Heroku dashboard.
+     - Under "Deployment method", select "GitHub".
+     - Click "Connect to GitHub" and authorize Heroku to access your GitHub account.
+     - Search for your repository and click "Connect".
 
-1. At the top of this repository click "<> Code",then "local", then "clone", "HTTPS" and copy the URL.
-2. In your IDE of choice, change to your preferred  working directory, open the Git Bash and type:
+   - Automatic Deploys (Optional):
+     - To enable automatic deploys, click on "Enable Automatic Deploys". This will automatically deploy your code every time you push changes to the selected branch.
 
-```
-git clone <repository-url>
-```
-3. Hit enter to clone.
+   - Manual Deploy:
+     - To deploy manually, select the branch you want to deploy (e.g., `main`) under the "Manual deploy" section, and click "Deploy Branch".
 
-### Forking the Repository
+5. Monitor Deployment:
+   - Check the status of your deployment on the "Activity" tab.
 
-You can create a copy of the repository and make changes without affecting the original repository by forking.
+6. Open Your Application:
+   - After deployment is complete, click "Open app" on the Heroku dashboard to access your live application.
 
-Click the "fork" button at the top of the GitHub repository and a copy of the repository will be saved in your account.
+7. View Logs:
+   - To monitor your application and troubleshoot any issues, click on the "More" button on the top-right corner of the Heroku dashboard and select "View logs".
 
-If the original repository is updated you'll receive a notification.
+### Running the Project Locally in Gitpod
+
+1. Open Gitpod Workspace:
+   - Navigate to your repository on GitHub and open it in Gitpod by clicking the "Gitpod" button or by using the URL `https://gitpod.io/#https://github.com/username/repository`.
+
+2. Clone the Repository (if not using Gitpod button):
+   - If you opened Gitpod manually, clone the repository with:
+     ```bash
+     git clone https://github.com/username/repository.git
+     ```
+   - Navigate into the cloned directory:
+     ```bash
+     cd repository
+     ```
+
+3. Run the Application Locally:
+   - Depending on your project type, start your application using the appropriate command. For this site, it would be
+     ```bash
+     python3 run.py
+     ```
+
+4. Access the Application:
+   - Gitpod provides a preview URL where you can view your application. Check the terminal or the Gitpod interface under the "Ports" tab for this URL.
 
 ### Making Updates
 
-After making changes to the code using your preferred IDE, you can commit them using Git.
+1. Commit Changes:
+   - After making changes, commit them using:
+     ```bash
+     git add *
+     git commit -m "Your commit message"
+     ```
 
-type the following into your git bash in order to do so:
+2. Push Changes to GitHub:
+   - Push your changes to GitHub:
+     ```bash
+     git push origin main
+     ```
 
-```
-git add .
-git commit -m "commit message"
-git push origin main
-```
-## Credits
+3. Deploy Changes to Heroku:
+   - If automatic deploys are enabled, Heroku will deploy your changes automatically. Otherwise, go to the Heroku dashboard and manually deploy the updated branch.
 
-### Media
+### Forking the Repository
 
-- Card images found in [ImKennyYip - black-jack repository](https://github.com/ImKennyYip/black-jack)
+To create a personal copy of the repository:
 
-### Code
+1. Fork the Repository:
+   - Click the "fork" button at the top of the GitHub repository page to create a copy under your GitHub account.
 
-- [The Fisher Yates Method](https://www.w3schools.com/js/js_array_sort.asp) was used to randomise the deck array in my javascript.
-- Solution for Jest not recognising Jquery object($) provided by user [jjee](https://stackoverflow.com/users/5830656/jjee) on [stackoverflow](https://stackoverflow.com/questions/72200196/jest-not-recognising-jquery-object)
-- Guide on writing JSDoc comments provided by [Brian Macharia](https://bald-swan-bb5.notion.site/JavaScript-60f5c6be428b4bd4874ef888b94597fd)
-
-### Acknowledgements
-
-- General revision on array methods provided by [w3schools.com](https://www.w3schools.com/js/js_array_methods.asp)
-
-
-
-
-
-
-
-
-## Technologies Used
-
-
+2. Stay Updated:
+   - You’ll receive notifications if the original repository is updated.
 
 ## Credits
 
